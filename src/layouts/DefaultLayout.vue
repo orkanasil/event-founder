@@ -12,19 +12,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-const events = ref(null);
-fetch(
-  "https://app.ticketmaster.com/discovery/v2/events?apikey=gN74Pt2ffefTpa8JGmepbOcixbOQ40OG&locale=*&page=3",
-)
-  .then((response) => response.json())
-  .then((data) => {
-    events.value = data._embedded.events;
-  });
+import { useEventStore } from "@/stores/events";
+import { onMounted, computed } from "vue";
+
+const eventStore = useEventStore();
+const events = computed(() => eventStore.getEvents);
 
 onMounted(() => {
-  console.log("Mounted çalişti");
-  console.log(events);
+  eventStore.fetchEvents();
 });
 </script>
 
