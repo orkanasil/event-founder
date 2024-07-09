@@ -1,31 +1,9 @@
 <template>
-  <div>
-    <p class="bg-slate-300 py-4">orki</p>
-    <div v-for="(event, index) in events" :key="index">
-      <div>
-        <li>{{ event.name }}</li>
-        <img :src="event.images[4].url" alt="Event Image" />
-        <p>{{ event.dates.start.localDate }}</p>
-      </div>
-    </div>
+  <div class="flex h-screen justify-center bg-sky-200">
+    <div class="container mt-40 h-2/4 w-3/4 rounded-2xl bg-white"></div>
   </div>
 </template>
 
-<script setup>
-import { useEventStore } from "@/stores/events";
-import { onMounted, computed } from "vue";
+<script setup></script>
 
-const eventStore = useEventStore();
-const events = computed(() => eventStore.getEvents);
-
-onMounted(() => {
-  eventStore.fetchEvents();
-});
-</script>
-
-<style scoped>
-img {
-  height: 100px;
-  width: 200px;
-}
-</style>
+<style scoped></style>
