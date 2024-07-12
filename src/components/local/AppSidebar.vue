@@ -3,11 +3,17 @@
     <h1 class="text-3xl font-bold">BRAND</h1>
     <div class="flex flex-col gap-6 pt-8">
       <a href="">
-        <i class="fa-sharp fa-solid fa-house fa-sm pr-2" style="color: #929db0"></i>
+        <i
+          class="fa-sharp fa-solid fa-house fa-sm pr-2"
+          style="color: #929db0"
+        ></i>
         Home
       </a>
       <a href="">
-        <i class="fa-sharp fa-solid fa-heart fa-sm pr-2" style="color: #929db0"></i>
+        <i
+          class="fa-sharp fa-solid fa-heart fa-sm pr-2"
+          style="color: #929db0"
+        ></i>
         Favorities
       </a>
       <a href="">
