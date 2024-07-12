@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col">
     <button
-      class="rounded border-2 border-slate-500 px-14 py-2  hover:bg-sky-50"
+      class="rounded border-2 border-slate-500 px-14 py-2 hover:bg-sky-50"
       @click="showDropdown"
     >
       All events <i class="fa-sharp fa-solid fa-caret-down px-2"></i>
     </button>
     <div
       v-if="isShowDropdown"
-      class="flex flex-col gap-2 rounded bg-sky-50 pl-14 py-2"
+      class="flex flex-col gap-2 rounded bg-sky-50 py-2 pl-14"
     >
       <a href="#"
         >Music Shows <i class="fa-sharp fa-solid fa-guitar px-2"></i
