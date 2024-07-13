@@ -2,6 +2,7 @@
   <div>
     <ListItem
       v-for="(event, index) in events"
+      :id="event.id"
       :key="index"
       :event="event"
       :format-date="formatDate"
@@ -17,12 +18,12 @@ import { computed } from "vue";
 const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
 
-const formatDate = () => {
+const formatDate = (id) => {
   const options = {
     year: "numeric",
     month: "numeric",
     day: "numeric",
   };
-  return new Date().toLocaleDateString("tr-TR", options);
+  return new Date(id).toLocaleDateString("tr-TR", options);
 };
 </script>
