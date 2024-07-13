@@ -10,7 +10,7 @@
     <p class="font-semibold">{{ event.name }}</p>
     <div class="ml-auto flex gap-3">
       <p><i class="fa-sharp fa-regular fa-calendar"></i></p>
-      <p>Event Date</p>
+      <p>{{ formatDate(event.dates.start.localDate) }}</p>
     </div>
     <div class="pl-8">
       <OButton variant="detail"
@@ -25,6 +25,10 @@
 defineProps({
   event: {
     type: String,
+    required: true,
+  },
+  formatDate: {
+    type: Function,
     required: true,
   },
 });

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <ListItem v-for="(event, index) in events" :key="index" :event="event" />
+    <ListItem
+      v-for="(event, index) in events"
+      :key="index"
+      :event="event"
+      :format-date="formatDate"
+    />
   </div>
 </template>
 
@@ -11,6 +16,13 @@ import { computed } from "vue";
 
 const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
-</script>
 
-<style lang="scss" scoped></style>
+const formatDate = () => {
+  const options = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  };
+  return new Date().toLocaleDateString("tr-TR", options);
+};
+</script>
