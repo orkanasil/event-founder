@@ -9,7 +9,7 @@
           <AppHeader />
         </div>
         <div class="mt-10 flex h-full overflow-y-scroll pl-16">
-          <AllEvents />
+          <router-view></router-view>
         </div>
       </div>
     </div>
@@ -19,7 +19,6 @@
 <script setup>
 import AppSidebar from "@/components/local/AppSidebar.vue";
 import AppHeader from "@/components/local/AppHeader.vue";
-import AllEvents from "@/views/Events/AllEvents.vue";
 </script>
 
 <style scoped></style>
