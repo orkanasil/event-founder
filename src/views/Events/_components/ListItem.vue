@@ -13,15 +13,21 @@
       <p>{{ formatDate(event.dates.start.localDate) }}</p>
     </div>
     <div class="pl-6">
-      <OButton variant="detail"
+      <OButton variant="detail" @click="toggleModal"
         ><i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         Detail Page
       </OButton>
+    </div>
+    <div v-if="isShowModal">
+      <EventModal :event="event" :format-date="formatDate" :closeModal="closeModal" />
     </div>
   </div>
 </template>
 
 <script setup>
+import EventModal from "@/views/Events/_components/EventModal.vue";
+import { ref } from "vue";
+
 defineProps({
   event: {
     type: String,
@@ -32,4 +38,14 @@ defineProps({
     required: true,
   },
 });
+
+const isShowModal = ref(false);
+
+const toggleModal = () => {
+  isShowModal.value = !isShowModal.value;
+};
+
+const closeModal = () => {
+  this.$router.push('/')
+}
 </script>
