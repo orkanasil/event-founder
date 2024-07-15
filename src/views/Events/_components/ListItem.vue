@@ -12,7 +12,7 @@
       <p><i class="fa-sharp fa-regular fa-calendar"></i></p>
       <p>{{ formatDate(event.dates.start.localDate) }}</p>
     </div>
-    <div class="pl-8">
+    <div class="pl-6">
       <OButton variant="detail"
         ><i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         Detail Page
