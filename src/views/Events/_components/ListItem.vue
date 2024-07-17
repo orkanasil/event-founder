@@ -7,7 +7,7 @@
       class="cursor-pointer hover:scale-110 hover:text-red-500"
       ><i class="fa-sharp fa-regular fa-heart fa-lg"></i>
     </Obutton>
-    <p class="font-semibold">{{ event.name }}</p>
+    <p class="w-72 font-semibold">{{ event.name }}</p>
     <div class="ml-auto flex gap-3">
       <p><i class="fa-sharp fa-regular fa-calendar"></i></p>
       <p>{{ formatDate(event.dates.start.localDate) }}</p>
@@ -19,16 +19,25 @@
       </OButton>
     </div>
     <div v-if="isShowModal">
-      <EventModal :event="event" :format-date="formatDate" :closeModal="closeModal" />
+      <EventModal
+        :event="event"
+        :format-date="formatDate"
+        :closeModal="closeModal"
+        :latitude="latitude"
+        :longitude="longitude"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
 import EventModal from "@/views/Events/_components/EventModal.vue";
-import { ref } from "vue";
+import { defineProps, ref, computed } from "vue";
+import { useRouter } from "vue-router";
 
-defineProps({
+const router = useRouter();
+
+const props = defineProps({
   event: {
     type: String,
     required: true,
@@ -41,11 +50,21 @@ defineProps({
 
 const isShowModal = ref(false);
 
+const latitude = computed(() =>
+  Number(props.event._embedded.venues[0].location.latitude),
+);
+const longitude = computed(() =>
+  Number(props.event._embedded.venues[0].location.longitude),
+);
+
 const toggleModal = () => {
   isShowModal.value = !isShowModal.value;
 };
 
 const closeModal = () => {
-  this.$router.push('/')
-}
+  isShowModal.value = false;
+  router.push({
+    name: "all-events",
+  });
+};
 </script>

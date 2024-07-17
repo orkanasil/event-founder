@@ -1,7 +1,7 @@
 <template>
   <div>
     <ListItem
-      v-for="(event, index) in events"  
+      v-for="(event, index) in events"
       :key="index"
       :event="event"
       :format-date="formatDate"
