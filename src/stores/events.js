@@ -22,12 +22,15 @@ export const useEventStore = defineStore("eventStore", {
       }
     },
     findEventsById(payload) {
-      const { id } = payload
-      const isExist = this.favEvents.includes((e) => e.id === id);
-      console.log('isExist ', isExist);
+      const { id } = payload;
+      const isExist = this.favEvents.some((e) => e.id === id);
+      console.log("isExist ", isExist);
       if (!isExist) {
         this.favEvents.push(payload);
       }
+    },
+    removeFavEvents(payload) {
+      this.favEvents.splice(payload, 1);
     },
   },
 });

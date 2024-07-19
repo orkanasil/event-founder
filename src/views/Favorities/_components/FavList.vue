@@ -12,6 +12,8 @@
           :key="index"
           :event="event"
           :format-date="formatDate"
+          @remove-item="removeItem"
+          :index="index"
         />
       </div>
     </template>
@@ -26,6 +28,10 @@ import { useEventStore } from "@/stores/events";
 const eventStore = useEventStore();
 
 const favEvents = computed(() => eventStore.favEvents);
+
+const removeItem = (payload) => {
+  eventStore.removeFavEvents(payload);
+};
 
 const formatDate = (id) => {
   const options = {

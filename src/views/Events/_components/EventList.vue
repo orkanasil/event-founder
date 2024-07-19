@@ -19,7 +19,7 @@ const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
 
 const addFav = (payload) => {
-  console.log('here', payload);
+  console.log("here", payload);
   eventStore.findEventsById(payload);
 };
 

@@ -3,6 +3,7 @@
     class="text-m ml-6 mr-6 mt-4 flex items-center gap-10 rounded-2xl bg-white px-10 py-8"
   >
     <Obutton
+      @click="$emit('removeItem', props.index)"
       variant="icon"
       class="cursor-pointer hover:scale-110 hover:text-red-500"
       ><i class="fa-sharp fa-solid fa-trash-can fa-lg"></i>
@@ -32,10 +33,12 @@
 
 <script setup>
 import FavModal from "./FavModal.vue";
-import { ref, computed, defineProps } from "vue";
+import { ref, computed, defineProps, defineEmits } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+
+defineEmits(["removeItem"]);
 
 const props = defineProps({
   event: {
@@ -44,6 +47,10 @@ const props = defineProps({
   },
   formatDate: {
     type: Function,
+    required: true,
+  },
+  index: {
+    type: String,
     required: true,
   },
 });

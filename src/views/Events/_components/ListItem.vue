@@ -36,7 +36,7 @@ import EventModal from "@/views/Events/_components/EventModal.vue";
 import { defineProps, ref, computed, defineEmits } from "vue";
 import { useRouter } from "vue-router";
 
-defineEmits(['addFav'])
+defineEmits(["addFav"]);
 
 const router = useRouter();
 
