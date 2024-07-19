@@ -7,7 +7,7 @@
       <div class="flex flex-col gap-4 border-r-2 pr-6 lg:w-1/2">
         <img
           class="mb-4 rounded-lg"
-          :src="event.images[0].url"
+          :src="event.images[5].url"
           alt="Event Image"
         />
         <p class="text-xl font-bold text-gray-900">{{ event.name }}</p>

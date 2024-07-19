@@ -4,10 +4,10 @@
       ><i class="fa-sharp fa-solid fa-xmark"></i
     ></OButton>
     <div class="flex flex-col rounded-lg bg-white p-6 lg:flex-row">
-      <div class="flex flex-col gap-4 border-r-2 pr-6 lg:w-1/2">
+      <div class="flex flex-col gap-4  pr-6 lg:w-1/2">
         <img
-          class="mb-4 rounded-lg"
-          :src="event.images[0].url"
+          class="mb-4  rounded-lg "
+          :src="event.images[5].url"
           alt="Event Image"
         />
         <p class="text-xl font-bold text-gray-900">{{ event.name }}</p>
