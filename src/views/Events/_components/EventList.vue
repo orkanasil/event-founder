@@ -5,6 +5,7 @@
       :key="index"
       :event="event"
       :format-date="formatDate"
+      @add-fav="addFav($event)"
     />
   </div>
 </template>
@@ -16,6 +17,11 @@ import { computed } from "vue";
 
 const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
+
+const addFav = (payload) => {
+  console.log('here', payload);
+  eventStore.findEventsById(payload);
+};
 
 const formatDate = (id) => {
   const options = {

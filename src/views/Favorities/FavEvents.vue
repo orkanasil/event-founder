@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <p class="text-2xl font-extrabold">Fav</p>
+  <div class="flex w-full">
+    <FavList />
   </div>
 </template>
 
-<script setup></script>
-
-<style scoped></style>
+<script setup>
+import FavList from "@/views/Favorities/_components/FavList.vue";
+</script>
