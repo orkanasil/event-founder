@@ -6,6 +6,7 @@
       @click="$emit('addFav', event)"
       variant="icon"
       class="cursor-pointer hover:scale-110 hover:text-red-500"
+      :class="[event.activeKey ? 'text-red-500' : '']"
       ><i class="fa-sharp fa-regular fa-heart fa-lg"></i>
     </Obutton>
     <p class="w-72 font-semibold">{{ event.name }}</p>

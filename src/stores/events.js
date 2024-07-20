@@ -16,7 +16,10 @@ export const useEventStore = defineStore("eventStore", {
         const response = await axios.get(
           "events?apikey=gN74Pt2ffefTpa8JGmepbOcixbOQ40OG&locale=*&page=3",
         );
-        this.events = response.data._embedded.events;
+        this.events = response.data._embedded.events.map((event) => ({
+          ...event,
+          activeKey: false,
+        }));
       } catch (error) {
         console.log("Error fetching events:", error);
       }
@@ -24,9 +27,15 @@ export const useEventStore = defineStore("eventStore", {
     findEventsById(payload) {
       const { id } = payload;
       const isExist = this.favEvents.some((e) => e.id === id);
+      const isActive = this.events.find((e) => e.id === id);
       console.log("isExist ", isExist);
-      if (!isExist) {
-        this.favEvents.push(payload);
+      if (isActive) {
+        isActive.activeKey = !isActive.activeKey;
+        if (!isExist) {
+          this.favEvents.push(payload);
+        } else {
+          this.favEvents = this.favEvents.filter((e) => e.id !== id);
+        }
       }
     },
     removeFavEvents(payload) {
