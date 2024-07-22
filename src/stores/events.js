@@ -5,10 +5,12 @@ export const useEventStore = defineStore("eventStore", {
   state: () => ({
     events: [],
     favEvents: [],
+    filteredEvents: [],
   }),
   getters: {
     getEvents: (state) => state.events,
     getFavEvents: (state) => state.favEvents,
+    getFilteredEvents: (state) => state.filteredEvents,
   },
   actions: {
     async fetchEvents() {
@@ -40,6 +42,19 @@ export const useEventStore = defineStore("eventStore", {
     },
     removeFavEvents(payload) {
       this.favEvents.splice(payload, 1);
+    },
+    filterEvents(payload) {
+      this.filteredEvents = this.events;
+      if (payload === "all") {
+        this.filteredEvents = this.events;
+      } else {
+        this.filteredEvents = this.events?.filter((event) =>
+          event.classifications.some(
+            (classifications) =>
+              classifications.segment.name.toLowerCase() === payload,
+          ),
+        );
+      }
     },
   },
 });

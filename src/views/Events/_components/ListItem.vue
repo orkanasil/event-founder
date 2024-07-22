@@ -13,6 +13,7 @@
     <div class="ml-auto flex gap-3">
       <p><i class="fa-sharp fa-regular fa-calendar"></i></p>
       <p>{{ formatDate(event.dates.start.localDate) }}</p>
+      <p>{{ event.classifications[0].segment.name }}</p>
     </div>
     <div class="pl-6">
       <OButton variant="detail" @click="toggleModal"
