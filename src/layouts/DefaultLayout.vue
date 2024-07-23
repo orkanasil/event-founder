@@ -5,9 +5,6 @@
         <AppSidebar />
       </div>
       <div class="flex flex-grow flex-col">
-        <div class="flex px-16 pt-4">
-          <AppHeader />
-        </div>
         <div class="mt-10 flex h-full overflow-y-scroll pl-16">
           <router-view></router-view>
         </div>
@@ -18,7 +15,6 @@
 
 <script setup>
 import AppSidebar from "@/components/local/AppSidebar.vue";
-import AppHeader from "@/components/local/AppHeader.vue";
 </script>
 
 <style scoped></style>
