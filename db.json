@@ -524,7 +524,7 @@
           }
         ]
       },
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "name": "Home Away From Home Series: Chicago Blackhawks v St. Louis Blues",
@@ -737,7 +737,10 @@
                 }
               ]
             },
-            "aliases": ["chicagoblackhawks", "blackhawk"],
+            "aliases": [
+              "chicagoblackhawks",
+              "blackhawk"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -994,7 +997,7 @@
           }
         ]
       },
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "name": "San Francisco 49ers vs. New Orleans Saints",
@@ -1229,7 +1232,10 @@
                 }
               ]
             },
-            "aliases": ["niners", "sfo 49ers"],
+            "aliases": [
+              "niners",
+              "sfo 49ers"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -4199,7 +4205,10 @@
                 }
               ]
             },
-            "aliases": ["padres baseball", "san diego padres"],
+            "aliases": [
+              "padres baseball",
+              "san diego padres"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -4849,7 +4858,9 @@
                 }
               ]
             },
-            "aliases": ["cinci"],
+            "aliases": [
+              "cinci"
+            ],
             "images": [
               {
                 "ratio": "3_2",
@@ -7580,7 +7591,10 @@
                 }
               ]
             },
-            "aliases": ["niners", "sfo 49ers"],
+            "aliases": [
+              "niners",
+              "sfo 49ers"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -8031,7 +8045,10 @@
                 }
               ]
             },
-            "aliases": ["padres baseball", "san diego padres"],
+            "aliases": [
+              "padres baseball",
+              "san diego padres"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -8547,7 +8564,10 @@
                 }
               ]
             },
-            "aliases": ["p!nk", "pink"],
+            "aliases": [
+              "p!nk",
+              "pink"
+            ],
             "images": [
               {
                 "ratio": "4_3",
@@ -9203,7 +9223,11 @@
                 }
               ]
             },
-            "aliases": ["steeler tickets", "steelers", "steelers tickets"],
+            "aliases": [
+              "steeler tickets",
+              "steelers",
+              "steelers tickets"
+            ],
             "images": [
               {
                 "ratio": "16_9",
@@ -9718,7 +9742,10 @@
                 }
               ]
             },
-            "aliases": ["niners", "sfo 49ers"],
+            "aliases": [
+              "niners",
+              "sfo 49ers"
+            ],
             "images": [
               {
                 "ratio": "16_9",

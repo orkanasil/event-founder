@@ -5,12 +5,10 @@ export const useEventStore = defineStore("eventStore", {
   state: () => ({
     events: [],
     favEvents: [],
-    filteredEvents: [],
   }),
   getters: {
     getEvents: (state) => state.events,
-    getFavEvents: (state) => state.favEvents,
-    getFilteredEvents: (state) => state.filteredEvents,
+    getFavEvents: (state) => state.events.filter((event) => event.isFavorite),
   },
   actions: {
     async fetchEvents() {
@@ -21,22 +19,20 @@ export const useEventStore = defineStore("eventStore", {
         console.log("Error fetching events:", error);
       }
     },
-    findEventsById(payload) {
+    async setFavEvent(payload) {
       const { id } = payload;
-      const isExist = this.favEvents.some((e) => e.id === id);
-      const isActive = this.events.find((e) => e.id === id);
-      console.log("isExist ", isExist);
-      if (isActive) {
-        isActive.activeKey = !isActive.activeKey;
-        if (!isExist) {
-          this.favEvents.push(payload);
-        } else {
-          this.favEvents = this.favEvents.filter((e) => e.id !== id);
-        }
+      payload.isFavorite = !payload.isFavorite;
+      await axios.put(`events/${id}`, payload);
+      if (payload.isFavorite) {
+        this.favEvents.push(payload);
+      } else {
+        this.favEvents = this.favEvents.filter((e) => e.id !== id);
       }
     },
     removeFavEvents(payload) {
-      this.favEvents.splice(payload, 1);
+      const { id } = payload;
+      this.favEvents = this.favEvents.filter((e) => e.id !== id);
+      this.fetchEvents();
     },
     filterEvents(payload) {
       this.filteredEvents = this.events;

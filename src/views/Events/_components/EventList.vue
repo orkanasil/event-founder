@@ -18,9 +18,9 @@ import { computed } from "vue";
 const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
 
-const addFav = (payload) => {
-  console.log("here", payload);
-  eventStore.findEventsById(payload);
+const addFav = async (payload) => {
+  await eventStore.setFavEvent(payload);
+  await eventStore.fetchEvents();
 };
 
 const formatDate = (id) => {

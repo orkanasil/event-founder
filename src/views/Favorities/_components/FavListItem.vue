@@ -3,7 +3,7 @@
     class="text-m ml-6 mr-6 mt-4 flex items-center gap-10 rounded-2xl bg-white px-10 py-8"
   >
     <Obutton
-      @click="$emit('removeItem', props.index)"
+      @click="$emit('removeItem', event)"
       variant="icon"
       class="cursor-pointer hover:scale-110 hover:text-red-500"
       ><i class="fa-sharp fa-solid fa-trash-can fa-lg"></i>
@@ -47,10 +47,6 @@ const props = defineProps({
   },
   formatDate: {
     type: Function,
-    required: true,
-  },
-  index: {
-    type: String,
     required: true,
   },
 });
