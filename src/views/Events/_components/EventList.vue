@@ -20,7 +20,7 @@ const events = computed(() => eventStore.getEvents);
 
 const addFav = async (payload) => {
   await eventStore.setFavEvent(payload);
-  await eventStore.fetchEvents();
+  // await eventStore.fetchEvents();
 };
 
 const formatDate = (id) => {
