@@ -4,6 +4,7 @@ import axios from "axios";
 export const useEventStore = defineStore("eventStore", {
   state: () => ({
     events: [],
+    tempEvents: [],
     favEvents: [],
   }),
   getters: {
@@ -15,6 +16,7 @@ export const useEventStore = defineStore("eventStore", {
       try {
         const response = await axios.get("events");
         this.events = response.data;
+        this.tempEvents = response.data;
       } catch (error) {
         console.log("Error fetching events:", error);
       }
@@ -35,16 +37,12 @@ export const useEventStore = defineStore("eventStore", {
       this.fetchEvents();
     },
     filterEvents(payload) {
-      this.filteredEvents = this.events;
       if (payload === "all") {
-        this.filteredEvents = this.events;
+        this.events = this.tempEvents;
       } else {
-        this.filteredEvents = this.events?.filter((event) =>
-          event.classifications.some(
-            (classifications) =>
-              classifications.segment.name.toLowerCase() === payload,
-          ),
-        );
+        this.events = this.tempEvents?.filter((event) => {
+          return event.type.toLowerCase() === payload;
+        });
       }
     },
   },
