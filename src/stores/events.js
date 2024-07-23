@@ -15,13 +15,8 @@ export const useEventStore = defineStore("eventStore", {
   actions: {
     async fetchEvents() {
       try {
-        const response = await axios.get(
-          "events?apikey=gN74Pt2ffefTpa8JGmepbOcixbOQ40OG&locale=*&page=3",
-        );
-        this.events = response.data._embedded.events.map((event) => ({
-          ...event,
-          activeKey: false,
-        }));
+        const response = await axios.get("events");
+        this.events = response.data;
       } catch (error) {
         console.log("Error fetching events:", error);
       }
