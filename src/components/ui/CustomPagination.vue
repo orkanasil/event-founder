@@ -6,9 +6,20 @@
       :disabled="currentPage === 1"
       >Previous</OButton
     >
-    <span class="flex justify-center"
-      >Page {{ currentPage }} of {{ totalPages }}</span
-    >
+    <div class="flex w-full cursor-pointer items-center justify-evenly">
+      <span
+        @click="goToPage(number)"
+        v-for="number in totalPages"
+        :key="number"
+        class="rounded-lg p-2 hover:bg-sky-50"
+        :class="{
+          'rounded-lg bg-sky-100 p-2 font-bold text-slate-600':
+            currentPage === number,
+          'text-black': currentPage !== number,
+        }"
+        >{{ number }}</span
+      >
+    </div>
     <OButton
       variant="detail"
       @click="nextPage"
@@ -32,6 +43,9 @@ const props = defineProps({
 
 const emit = defineEmits(["update:currentPage"]);
 
+const goToPage = (pageNumber) => {
+  emit("update:currentPage", pageNumber);
+};
 const nextPage = () => {
   if (props.currentPage < props.totalPages) {
     emit("update:currentPage", props.currentPage + 1);
