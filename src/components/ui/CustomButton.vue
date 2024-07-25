@@ -29,7 +29,7 @@ defineProps({
 
 <style scoped>
 .detail {
-  background-color: rgb(235, 229, 148);
+  background-color: #FFF2F2;
   display: flex;
   padding: 8px 16px;
   gap: 10px;
@@ -38,6 +38,5 @@ defineProps({
 
 .icon {
   cursor: pointer;
-  
 }
 </style>
