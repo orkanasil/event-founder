@@ -1,7 +1,11 @@
 <template>
   <div class="flex h-screen justify-center bg-sky-200">
-    <div class="container mt-40 flex h-3/4 w-3/4 rounded-2xl bg-white">
-      <div class="h-full w-64 rounded-l-2xl bg-sky-100">
+    <div
+      class="container mt-40 flex h-3/4 w-3/4 flex-col rounded-2xl bg-white md:flex xl:flex-row"
+    >
+      <div
+        class="flex w-full justify-center rounded-2xl bg-sky-100 xl:h-full xl:w-1/4 xl:rounded-l-2xl"
+      >
         <AppSidebar />
       </div>
       <div class="flex flex-grow flex-col">
@@ -16,5 +20,3 @@
 <script setup>
 import AppSidebar from "@/components/local/AppSidebar.vue";
 </script>
-
-<style scoped></style>
