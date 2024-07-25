@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-m my-2 flex flex-col items-center gap-10 rounded-2xl bg-white px-20 py-6 md:flex md:flex-row md:items-center"
+    class="text-m my-2 flex flex-col items-center gap-10 rounded-2xl bg-sky-50 px-20 py-6 md:flex md:flex-row md:items-center"
   >
     <Obutton
       @click="$emit('removeItem', event)"
