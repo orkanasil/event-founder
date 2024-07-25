@@ -1,15 +1,15 @@
 <template>
-  <div class="flex h-screen justify-center bg-sky-200">
+  <div class="flex min-h-screen justify-center bg-sky-200">
     <div
-      class="container mt-40 flex h-3/4 w-3/4 flex-col rounded-2xl bg-white md:flex xl:flex-row"
+      class="container flex min-h-full w-full flex-col rounded-2xl bg-white md:mt-20 md:h-3/4 lg:w-3/4 lg:flex-row xl:mt-40"
     >
       <div
-        class="flex w-full justify-center rounded-2xl bg-sky-100 xl:h-full xl:w-1/4 xl:rounded-l-2xl"
+        class="flex w-full justify-center bg-sky-100 lg:w-1/4 lg:rounded-l-2xl"
       >
         <AppSidebar />
       </div>
       <div class="flex flex-grow flex-col">
-        <div class="mt-10 flex h-full overflow-y-scroll pl-16">
+        <div class="mt-10 flex h-full px-4 md:px-16">
           <router-view></router-view>
         </div>
       </div>

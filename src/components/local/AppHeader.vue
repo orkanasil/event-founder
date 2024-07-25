@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="relative flex flex-col">
     <button
       class="rounded border-2 border-slate-500 px-14 py-2 hover:bg-sky-50"
       @click="showDropdown"
@@ -8,7 +8,7 @@
     </button>
     <div
       v-if="isShowDropdown"
-      class="flex flex-col gap-2 rounded bg-sky-50 py-2 pl-14"
+      class="absolute top-11 z-10 flex flex-col gap-2 w-full items-center rounded border-2 bg-white py-2 shadow-lg lg:px-10"
     >
       <a @click="filterEvent('all')" href="#">
         All

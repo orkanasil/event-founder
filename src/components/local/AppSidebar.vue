@@ -7,7 +7,7 @@
         variant="icon"
         @click="showMenu"
       >
-        <i class="fa-sharp fa-solid fa-bars"></i>
+        <i class="fa-sharp fa-solid fa-bars" style="color: #929db0"></i>
       </Obutton>
       <div
         :class="{

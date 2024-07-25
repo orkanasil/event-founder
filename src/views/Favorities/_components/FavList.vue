@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4 mr-4 flex w-full flex-col rounded-xl bg-sky-50">
+  <div class="mb-4 flex w-full flex-col rounded-xl bg-sky-50 px-6">
     <template v-if="favEvents.length === 0">
       <div class="my-auto flex w-full justify-center">
         <p class="text-xl text-gray-500">There are no favorite events yet.</p>

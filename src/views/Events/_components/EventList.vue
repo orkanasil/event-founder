@@ -1,6 +1,6 @@
 <template>
   <div class="flex grow flex-col justify-between">
-    <div>
+    <div class="lg:flex lg:grow-0">
       <AppHeader @filter-event="onEventFilter" />
     </div>
     <ListItem
@@ -29,7 +29,7 @@ const eventStore = useEventStore();
 const events = computed(() => eventStore.getEvents);
 
 const currentPage = ref(1);
-const itemsPerPage = ref(3);
+const itemsPerPage = ref(4);
 
 const totalPages = computed(() => {
   return Math.ceil(events.value.length / itemsPerPage.value);

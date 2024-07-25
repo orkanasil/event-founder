@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-m ml-6 mr-6 mt-4 flex items-center gap-10 rounded-2xl bg-white px-10 py-8"
+    class="text-m my-2 flex flex-col items-center gap-10 rounded-2xl bg-white px-20 py-6 md:flex md:flex-row md:items-center"
   >
     <Obutton
       @click="$emit('removeItem', event)"
@@ -8,12 +8,12 @@
       class="cursor-pointer hover:scale-110 hover:text-red-500"
       ><i class="fa-sharp fa-solid fa-trash-can fa-lg"></i>
     </Obutton>
-    <p class="w-72 font-semibold">{{ event.name }}</p>
-    <div class="ml-auto flex gap-3">
+    <p class="max-w-72 font-semibold">{{ event.name }}</p>
+    <div class="flex gap-3 md:ml-auto">
       <p><i class="fa-sharp fa-regular fa-calendar"></i></p>
       <p>{{ formatDate(event.dates.start.localDate) }}</p>
     </div>
-    <div class="pl-6">
+    <div class="md:pl-6">
       <OButton variant="detail" @click="openModal"
         ><i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         Detail Page
